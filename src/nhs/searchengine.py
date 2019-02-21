@@ -34,6 +34,8 @@ def search(datafile, query, bool_operator):
 
     # calculating results
     results = [str(i) for i, text in enumerate(data)
-                        if ((any if bool_operator == 'OR' else all)([term in _extract_words(text) for term in query]))]
+               if (query.issubset(_extract_words(text))
+                   if bool_operator == 'AND'
+                   else bool(query.intersection(_extract_words(text))))]
 
     return results

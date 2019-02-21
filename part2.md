@@ -1,10 +1,3 @@
-Search strategies:
-
-"[Comparing MapReduce, RiakSearch, and Secondary Indexes](http://docs.basho.com/riak/1.2.0/tutorials/querying/)"
-and particularly
-"[When to Use Search](http://docs.basho.com/riak/1.2.0/tutorials/querying/Riak-Search/#When-to-Use-Search)"
-
-
 # Common query caching
 
 
@@ -109,9 +102,19 @@ curl localhost:8098/buckets/hscicNews/keys/9
 
 # Considerations
 
+In order to test the deliverables a local instance of Riak has been set up using a
+[docker image](https://hub.docker.com/r/lapax/riak) supporting LevelDB as backend
+in order to use secondary indexes.
+
 
 ## Limitations of the solution
  
-A limit of 512 nodes in a ring exists for using the secondary indexes.
+A suggested limit of 512 nodes in a ring exists for using the secondary indexes.
 See [When Not to Use Secondary Indexes](http://docs.basho.com/riak/1.2.0/tutorials/querying/Secondary-Indexes/#When-Not-to-Use-Secondary-Indexes)
+
+Search strategies links consulted for the exercise:
+"[Comparing MapReduce, RiakSearch, and Secondary Indexes](http://docs.basho.com/riak/1.2.0/tutorials/querying/)"
+and particularly
+"[When to Use Search](http://docs.basho.com/riak/1.2.0/tutorials/querying/Riak-Search/#When-to-Use-Search)"
+
  

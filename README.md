@@ -6,7 +6,7 @@ This is the requested coding test.
 
 You can use `news_search` without arguments to get some help or `news_search --help` for additional help.
 
-
+An example datafile is provided in [data/hscic-news](data/hscic-news)
 
 ### Prerequisites
 
