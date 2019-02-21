@@ -15,6 +15,34 @@ The following libraries have been used:
 wih the command line
 - [Pytest](https://docs.pytest.org/en/latest/) for unit testing the command line utility
 
+## Example usage
+
+Help: 
+
+```bash
+$ news_search --help
+Usage: news_search [OPTIONS] QUERY [[AND|OR]]
+
+  Will search the database. If operator is == OR (default) then entries must
+  match at least one of the terms provided in the QUERY parameter. If
+  operator is == OR then entries must match all of the terms provided in the
+  QUERY parameter.
+
+Options:
+  --datafile FILENAME
+  --help               Show this message and exit.
+```
+
+Example commands:
+```bash
+$ news_search "which while" AND
+7
+
+$ news_search "which while" OR
+2,3,7,9
+
+```
+
 ## Search algorithm
 
 The query string is first purged from any punctuation and then converted to a set of 

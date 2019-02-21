@@ -1,3 +1,12 @@
+# Introduction
+
+The following exercise has been completed without considering advanced Riak search techniques.
+
+Possible improvements could be achieved by using the Apache SOLR - Riak integration.
+More info is available at following links:
+- https://docs.basho.com/riak/kv/2.0.8/developing/usage/search/
+- http://basho.com/products/riak-kv/complex-query-support/
+
 # Common query caching
 
 The key for the cache entry will be generated using the same word extraction algorithm
