@@ -1,5 +1,58 @@
 # Common query caching
 
+The key for the cache entry will be generated using the same word extraction algorithm
+in use for the search utility.
+The resulting query words will be concatenated to the operator using ",".
+
+For example a query using `Care Quality Commission` and `OR` will be resulting in the following
+key:
+
+```
+OR,commission,quality,care
+```
+
+
+Here follow the *curl* examples to load the cache
+
+```bash
+
+curl -X POST \
+  -H "Content-Type: text/plain"  \
+  -d "0,1,2,3,4,5,6" \
+   http://localhost:8098/buckets/hscicNewsCache/keys/OR,commission,quality,care
+
+curl -X POST \
+  -H "Content-Type: text/plain"  \
+  -d "9" \
+  http://localhost:8098/buckets/hscicNewsCache/keys/OR,2004,september
+
+curl -X POST \
+  -H "Content-Type: text/plain"  \
+  -d "6,8" \
+  http://localhost:8098/buckets/hscicNewsCache/keys/OR,population,generally,general
+
+curl -X POST \
+  -H "Content-Type: text/plain"  \
+  -d "1" \
+  http://localhost:8098/buckets/hscicNewsCache/keys/AND,commission,quality,admission,care
+
+curl -X POST \
+  -H "Content-Type: text/plain"  \
+  -d "6" \
+  http://localhost:8098/buckets/hscicNewsCache/keys/AND,population,alzheimer,general
+```
+
+The following is an example of hwo to retrieve the indexes:
+```bash
+curl http://localhost:8098/buckets/hscicNewsCache/keys/OR,population,generally,general
+```
+The result is a list of document keys separated by commas (eg. "*6,8*")
+
+The content can then be retrieved using the key:
+```bash
+curl localhost:8098/buckets/hscicNews/keys/6
+```
+
 
 # Monthly indexes
 

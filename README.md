@@ -8,6 +8,25 @@ You can use `news_search` without arguments to get some help or `news_search --h
 
 An example datafile is provided in [data/hscic-news](data/hscic-news)
 
+No library was used for implementing the search algorithm.
+
+The following libraries have been used:
+- [Click](https://click.palletsprojects.com/en/7.x/) for enhancing the user experience
+wih the command line
+- [Pytest](https://docs.pytest.org/en/latest/) for unit testing the command line utility
+
+## Search algorithm
+
+The query string is first purged from any punctuation and then converted to a set of 
+lowercase words.
+The Python set will ensure duplicate words are discarded.
+
+For each document in the datafile we will then first get a set of words by applying the 
+same word extraction algorithm as for the query parameter. The resulting set is compared
+to the query set using the following operators:
+- `set.issubset` if the operator request parameter was AND
+- `set.intersection` if the operator request parameter was OR
+
 ### Prerequisites
 
 This projects has been developed and tested using Python 3.6
