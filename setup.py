@@ -27,7 +27,6 @@ setup(name="nhs_code_test",
       keywords='',
       classifiers=[
           'Development Status :: 3 - Alpha',
-          'Framework :: Django',
           'License :: OSI Approved :: MIT License',
           'Natural Language :: English',
           'Programming Language :: Python :: 3.6'
