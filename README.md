@@ -2,7 +2,7 @@
 
 This is the requested coding test.
 
-[Installation](#Installing%20runtime) will define a new shell command `news_search`.
+[Installation](#Installing-runtime) will define a new shell command `news_search`.
 
 You can use `news_search` without arguments to get some help or `news_search --help` for additional help.
 
@@ -48,7 +48,7 @@ pipenv install -d
 
 Tests can be executed launching `pytest`. 
 
-Make sure you have installed properly your [dev environment](#Installing%20dev%20environment)
+Make sure you have installed properly your [dev environment](#Installing-dev-environment)
 
 More info on pytest is available [here](https://docs.pytest.org/en/latest/) 
 
